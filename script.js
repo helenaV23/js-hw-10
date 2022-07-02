@@ -4,20 +4,18 @@
 // и в качестве входящего значение принимает результат работы функции sum.
 // Функция main должна возвращать результат функции аргумента c, если он есть, либо результат функции sum.
 
-function main (a = 2, b = 3, c) {
-    if (typeof(c) === "function") {
-        return c(sum(a, b));
-    } else {
-        return (sum(a, b));
-    }
-}
 
-function sum (a, b) { 
-    return a + b; 
-}
+function sum(x, y) { 
+    return x + y; 
+} 
 
-function x(number1) {
-    return number1 *100;
+function main(a = 2, b = 3, c) {
+    let result = sum(a, b);  
+    return typeof c === "function" ? c(result) : result;
+}
+   
+function x(number) {
+    return number * 100;
 }
 
 alert(main(10, 20, x));
